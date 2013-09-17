@@ -1,0 +1,11 @@
+set bell-style visible
+
+"\C-f": forward-word
+#"\e[1;5C": forward-word
+#"\e[5C": forward-word
+#"\e[C": forward-word
+
+"\C-b": backward-word
+#"\e[1;5D": backward-word
+#"\e[5D": backward-word
+#"\e[D": backward-word
