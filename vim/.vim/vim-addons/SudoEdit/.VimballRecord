@@ -1,1 +1,0 @@
-SudoEdit-0.10.vmb: call delete('/home/brd/.vim/vim-addons/SudoEdit/autoload/SudoEdit.vim')|call delete('/home/brd/.vim/vim-addons/SudoEdit/doc/SudoEdit.txt')|call delete('/home/brd/.vim/vim-addons/SudoEdit/plugin/SudoEdit.vim')

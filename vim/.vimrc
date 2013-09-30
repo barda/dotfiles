@@ -85,11 +85,9 @@ fun SetupVAM()
     execute '!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager '
                 \ shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
   endif
-  call vam#ActivateAddons(["vim-snippets", "pdf", "rails", "fugitive", "github:sjl/threesome.vim", "github:sjl/gundo.vim", "TailMinusF", "netrw", "splitjoin", "SudoEdit", "github:maksimr/vim-translator", "FuzzyFinder", "LustyExplorer", "taglist", "github:scrooloose/nerdcommenter", "Supertab", "CmdlineComplete", "unimpaired", "upAndDown", "Command-T", "The_NERD_tree", "endwise", "surround", "ragtag", "vim-ruby", "YankRing", "EasyMotion", "github:vim-scripts/Solarized", "genutils", "multiselect"])
-  call vam#ActivateAddons(["github:Townk/vim-autoclose"])
+  call vam#ActivateAddons(["vim-snippets", "pdf", "rails", "fugitive", "github:sjl/threesome.vim", "github:sjl/gundo.vim", "TailMinusF", "netrw", "splitjoin", "SudoEdit", "github:maksimr/vim-translator", "FuzzyFinder", "LustyExplorer", "taglist", "github:scrooloose/nerdcommenter", "Supertab", "CmdlineComplete", "unimpaired", "upAndDown", "Command-T", "The_NERD_tree", "endwise", "surround", "ragtag", "vim-ruby", "YankRing", "EasyMotion", "github:vim-scripts/Solarized", "genutils", "multiselect", "github:Townk/vim-autoclose"])
 endfun
 call SetupVAM()
-
 
 "Syntastic", 
 "github:Lokaltog/vim-powerline", 
