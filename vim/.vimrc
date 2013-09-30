@@ -75,8 +75,22 @@ set foldenable
 " PLUGINS
 "
 
-set runtimepath+=~/.vim/vim-addons/vim-addon-manager
-call vam#ActivateAddons(["snipmate-snippets", "pdf", "rails", "fugitive", "github:sjl/threesome.vim", "github:sjl/gundo.vim", "TailMinusF", "netrw", "splitjoin", "SudoEdit", "github:maksimr/vim-translator", "FuzzyFinder", "LustyExplorer", "taglist", "github:scrooloose/nerdcommenter", "supertab", "CmdlineComplete", "unimpaired", "upAndDown", "Command-T", "The_NERD_tree", "endwise", "surround", "ragtag", "vim-ruby", "AutoClose", "YankRing", "EasyMotion", "github:vim-scripts/Solarized", "genutils", "multiselect"])
+"set runtimepath+=~/.vim/vim-addons/vim-addon-manager
+fun SetupVAM()
+  let c = get(g:, 'vim_addon_manager', {})
+  let g:vim_addon_manager = c
+  let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
+  let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
+  if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
+    execute '!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager '
+                \ shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
+  endif
+  call vam#ActivateAddons(["vim-snippets", "pdf", "rails", "fugitive", "github:sjl/threesome.vim", "github:sjl/gundo.vim", "TailMinusF", "netrw", "splitjoin", "SudoEdit", "github:maksimr/vim-translator", "FuzzyFinder", "LustyExplorer", "taglist", "github:scrooloose/nerdcommenter", "Supertab", "CmdlineComplete", "unimpaired", "upAndDown", "Command-T", "The_NERD_tree", "endwise", "surround", "ragtag", "vim-ruby", "YankRing", "EasyMotion", "github:vim-scripts/Solarized", "genutils", "multiselect"])
+  call vam#ActivateAddons(["github:Townk/vim-autoclose"])
+endfun
+call SetupVAM()
+
+
 "Syntastic", 
 "github:Lokaltog/vim-powerline", 
 
